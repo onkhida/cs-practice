@@ -1,19 +1,18 @@
-import random
+import random 
 
-random_arr = [random.randint(1,100) for i in range(10)]
+random_arr = [random.randint(0, 100) for i in range(10)]
 
 def bubble_sort(arr):
-    arr_length = len(arr)
-    
-    # iterate through the array a certain number of times
-    for i in range(arr_length):
+    arrlength = len(arr)
 
-        print(arr_length-i-1)
-        for k in range(i-arr_length-1):
-            # if the left element is bigger than the right
-            if arr[k] > arr[k-1]:
-                arr[k], arr[k-1] = arr[k-1], arr[k]
-                #swap them
+    for i in range(arrlength):
+        for j in range(0, arrlength-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+
+    return arr
 
 print(random_arr)
-print(bubble_sort(random_arr))
+
+x = bubble_sort(random_arr)
+print(x)
